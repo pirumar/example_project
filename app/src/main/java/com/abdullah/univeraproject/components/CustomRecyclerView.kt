@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.abdullah.univeraproject.databinding.CustomRecyclerViewBinding
+import com.abdullah.univeraproject.di.adapter.RecAdapter
 import com.abdullah.univeraproject.utils.RemoteResponse
 import com.abdullah.univeraproject.utils.Status
 
@@ -35,7 +36,6 @@ class CustomRecyclerView(context: Context, attrs: AttributeSet?) : LinearLayout(
 
     fun SetData(
         data: RemoteResponse<List<Any>>,
-
     ) {
         liveData.observe(findViewTreeLifecycleOwner()!!) {
             if (it.status == Status.LOADING) {
@@ -53,6 +53,7 @@ class CustomRecyclerView(context: Context, attrs: AttributeSet?) : LinearLayout(
             }
         }
         this.liveData.postValue(data)
+
     }
 
 

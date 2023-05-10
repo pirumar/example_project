@@ -3,9 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.abdullah.univeraproject">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".HiltApp"
         android:allowBackup="true"
@@ -18,35 +15,31 @@
         android:theme="@style/Theme.UniveraProject"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat">
+            android:label="Univera Example"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" >
 
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.MAIN" />-->
 
-            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-            <!--            </intent-filter>-->
 
-            <!--            <meta-data-->
-            <!--                android:name="android.app.lib_name"-->
-            <!--                android:value="" />-->
         </activity>
 
-<!--        <service-->
-<!--            android:name=".di.service.MessageService"-->
-<!--            android:enabled="true" />-->
-    </application>
+        <service android:name=".di.service.MessageService" android:enabled="true" />
 
+    </application>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

@@ -27,4 +27,10 @@ class RecAdapter<T>(
     override fun getItemViewType(position: Int): Int {
         return 0
     }
+
+
+    fun setItems(items: List<T>) {
+        (_items as ArrayList<T>).addAll(items)
+        notifyDataSetChanged()
+    }
 }

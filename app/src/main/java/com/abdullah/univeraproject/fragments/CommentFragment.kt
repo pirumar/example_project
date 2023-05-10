@@ -26,7 +26,7 @@ private const val ARG_PHOTOID = "photoId"
 class CommentFragment : Fragment() {
     private var photoId: Int = 0
     val viewModel by viewModels<CommentViewModel>()
-
+    var adapter: RecAdapter<Comment>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.observe(this, this::OnChanged)
@@ -39,21 +39,22 @@ class CommentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.customRec.recycylerView().addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-                if (!recyclerView.canScrollVertically(1)) {
-                    viewModel.LoadData(photoId)
+        binding.customRec.recycylerView()
+            .addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                    super.onScrollStateChanged(recyclerView, newState)
+                    if (!recyclerView.canScrollVertically(1)) {
+                        viewModel.LoadData(photoId)
+                    }
                 }
-            }
-        })
+            })
     }
 
     lateinit var binding: FragmentCommentBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCommentBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -71,8 +72,8 @@ class CommentFragment : Fragment() {
 
     private fun OnChanged(success: Boolean, data: RemoteResponse<List<Comment>>?) {
         data?.let { binding.customRec.SetData(it) }
-        binding.customRec.recycylerView().adapter =
-            RecAdapter(
+        if (adapter == null) {
+            adapter = RecAdapter(
                 data?._data,
                 context,
                 this::createViewHolder,
@@ -80,6 +81,11 @@ class CommentFragment : Fragment() {
 
                 }
             )
+            binding.customRec.recycylerView().adapter = adapter
+        } else {
+            data?._data?.let { adapter!!.setItems(it) }
+        }
+
     }
 
     companion object {

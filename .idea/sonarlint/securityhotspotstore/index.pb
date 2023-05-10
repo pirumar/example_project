@@ -3,16 +3,12 @@ o
 ?app/src/main/java/com/abdullah/univeraproject/models/Comment.kt,2\5\258cd704d7b72f30cc4c0da113496105f27e2fe2
 m
 =app/src/main/java/com/abdullah/univeraproject/utils/Status.kt,3\e\3ea5f47c2cf6586432a242867317e684a3db0a10
-p
-@app/src/main/java/com/abdullah/univeraproject/utils/StringExt.kt,4\5\45960ad2957a738227cfac82c6482174706d8e91
 z
 Japp/src/main/java/com/abdullah/univeraproject/viewmodels/PhotoViewModel.kt,b\4\b40349b9a302ec29359ea8c961c3b7ddb18cb20e
 }
 Mapp/src/main/java/com/abdullah/univeraproject/viewmodels/RegisterViewModel.kt,b\6\b6a1a55963247971dd0f57bfd51514952528dfb1
 {
 Kapp/src/main/java/com/abdullah/univeraproject/viewholder/AlbumViewHolder.kt,d\d\dd36142d1f67c9b1c0f589365fe9fcf1c8e0850c
-z
-Japp/src/main/java/com/abdullah/univeraproject/di/service/MessageService.kt,7\7\77aa4e7f57f39fc64083217a51362bdd4aeaa8fe
 {
 Kapp/src/main/java/com/abdullah/univeraproject/viewholder/PhotoViewHolder.kt,0\3\0348e57cb73d773bd5ad20976c594a70736c3728
 y
@@ -39,19 +35,11 @@ x
 Happ/src/main/java/com/abdullah/univeraproject/fragments/PhotoFragment.kt,d\8\d8d7e29326c425a0ff503492147fea5e9266aa83
 {
 Kapp/src/main/java/com/abdullah/univeraproject/fragments/RegisterFragment.kt,1\6\16305a0378bd93d7181b12de0a2e029b8da861b9
-m
-=app/src/main/java/com/abdullah/univeraproject/MainActivity.kt,0\e\0ebec555755a25e15bd6a44ce2e167b02b376ce9
 t
 Dapp/src/main/java/com/abdullah/univeraproject/di/module/AppModule.kt,f\9\f9fdd87e160756e9441b55481b5cb294ff3de1ee
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 l
 <app/src/main/java/com/abdullah/univeraproject/models/Post.kt,3\f\3f8b7c24348b97a8a4c14dce21c94b388076d173
 y
 Iapp/src/main/java/com/abdullah/univeraproject/viewmodels/BaseViewModel.kt,4\5\45185ae9f791adb87ccd473eed8c15cb4a862999
-u
-Eapp/src/main/java/com/abdullah/univeraproject/utils/RemoteResponse.kt,e\5\e52d0179a2ad2aae589fbaa3fb598cde1d9693e2
-v
-Fapp/src/main/java/com/abdullah/univeraproject/di/adapter/RecAdapter.kt,5\e\5ec0bdf149ae873d06f16345895ccb24c45e9414
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164

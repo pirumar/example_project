@@ -27,7 +27,7 @@ class MessageService : LifecycleService() {
                 handler.post {
                     Toast.makeText(
                         applicationContext,
-                        "every 5 minute",
+                        "5 dakikada bir toast",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

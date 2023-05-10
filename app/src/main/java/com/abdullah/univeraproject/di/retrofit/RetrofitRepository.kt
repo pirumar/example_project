@@ -105,7 +105,7 @@ class RetrofitRepository @Inject constructor(
                     call: Call<List<Comment>>,
                     response: Response<List<Comment>>
                 ) {
-                    Thread.sleep(300)
+                    Thread.sleep(500)
                     val list = liveData.value?._data
                     if (list != null) {
                         (list as ArrayList<Comment>).addAll(response.body()!!)
