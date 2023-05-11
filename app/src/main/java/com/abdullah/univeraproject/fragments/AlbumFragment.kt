@@ -42,6 +42,10 @@ class AlbumFragment : Fragment() {
     ): View? {
 
         binding = FragmentAlbumBinding.inflate(inflater, container, false)
+        binding.customRec.SetOnRetryConnection {
+            viewModel.LoadData()
+
+        }
         return binding.root
     }
 
@@ -74,6 +78,7 @@ class AlbumFragment : Fragment() {
                 this::ItemClick
             )
         binding.customRec.recycylerView().adapter?.notifyDataSetChanged()
+
 
     }
 

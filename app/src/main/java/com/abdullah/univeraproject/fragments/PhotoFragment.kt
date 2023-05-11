@@ -38,6 +38,9 @@ class PhotoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPhotoBinding.inflate(inflater, container, false)
+        binding.customRec.SetOnRetryConnection {
+            LoadData()
+        }
         return binding.root
     }
 
@@ -45,11 +48,14 @@ class PhotoFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.observe(this, this::OnChanged)
+        LoadData()
+    }
+
+    fun LoadData() {
         val id = mSharedPreferences?.getInt("albumId", 0)
         if (id != null) {
             viewModel.loadData(id)
         }
-
     }
 
     private fun createViewHolder(parent: ViewGroup): BaseViewHolder<Photo> {

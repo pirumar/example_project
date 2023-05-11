@@ -48,6 +48,9 @@ class CommentFragment : Fragment() {
                     }
                 }
             })
+        binding.customRec.SetOnRetryConnection {
+            viewModel.LoadData(photoId)
+        }
     }
 
     lateinit var binding: FragmentCommentBinding
